@@ -57,9 +57,8 @@ public sealed partial class GuestImageCache
 
     private bool CanReadBack(CachedImage image)
     {
-        if (!image.SafeToDownload)
         {
-            return false;
+            return image.SafeToDownload;
         }
 
         var range = image.Description.Data;
